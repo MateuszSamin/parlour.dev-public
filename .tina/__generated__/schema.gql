@@ -119,10 +119,24 @@ type GlobalHeaderNav {
   label: String
 }
 
+type GlobalHeaderProductsCollectionsProducts {
+  label: String
+  icon: String
+  smallIcon: Boolean
+  href: String
+  description: JSON
+}
+
+type GlobalHeaderProductsCollections {
+  label: String
+  products: [GlobalHeaderProductsCollectionsProducts]
+}
+
 type GlobalHeader {
   icon: GlobalHeaderIcon
   color: String
   nav: [GlobalHeaderNav]
+  productsCollections: [GlobalHeaderProductsCollections]
 }
 
 type GlobalFooterServices {
@@ -387,10 +401,24 @@ input GlobalHeaderNavMutation {
   label: String
 }
 
+input GlobalHeaderProductsCollectionsProductsMutation {
+  label: String
+  icon: String
+  smallIcon: Boolean
+  href: String
+  description: JSON
+}
+
+input GlobalHeaderProductsCollectionsMutation {
+  label: String
+  products: [GlobalHeaderProductsCollectionsProductsMutation]
+}
+
 input GlobalHeaderMutation {
   icon: GlobalHeaderIconMutation
   color: String
   nav: [GlobalHeaderNavMutation]
+  productsCollections: [GlobalHeaderProductsCollectionsMutation]
 }
 
 input GlobalFooterServicesMutation {

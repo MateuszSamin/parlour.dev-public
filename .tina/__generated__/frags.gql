@@ -26,6 +26,18 @@ fragment GlobalParts on Global {
       href
       label
     }
+    productsCollections {
+      __typename
+      label
+      products {
+        __typename
+        label
+        icon
+        smallIcon
+        href
+        description
+      }
+    }
   }
   footer {
     __typename

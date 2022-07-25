@@ -172,6 +172,62 @@ const schema = defineSchema({
                 },
               ],
             },
+            {
+              type: "object",
+              label: "Services collections",
+              name: "productsCollections",
+              list: true,
+              ui: {
+                itemProps: (item) => ({
+                  label: `Services collections: ${item.label}`
+                })
+              },
+              fields: [
+                {
+                  type: "string",
+                  label: "Label",
+                  name: "label"
+                },
+                {
+                  type: "object",
+                  label: "Services / Products",
+                  name: "products",
+                  list: true,
+                  ui: {
+                    itemProps: (item) => ({
+                      label: `Service/product: ${item.label}`
+                    })
+                  },
+                  fields: [
+                    {
+                      type: "string",
+                      label: "Label",
+                      name: "label"
+                    },
+                    {
+                      type: "image",
+                      label: "Project icon",
+                      name: "icon"
+                    },
+                    { 
+                      type: "boolean",
+                      label: "Make icon smaller",
+                      name: "smallIcon"
+                    },
+                    {
+                      type: "string",
+                      label: "Link",
+                      name: "href"
+                    },
+                    {
+                      type: "rich-text",
+                      label: "Description",
+                      name: "description"
+                    }
+                  ]
+                }
+              ]
+            },
           ],
         },
         {

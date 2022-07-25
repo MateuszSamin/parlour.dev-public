@@ -12,7 +12,7 @@ import {
 } from "./software";
 
 export const Project = ({ data }) => {
-  const gradient = { to: data.to || "black", from: data.from || "white" }
+  const gradient = { to: data.to || "black", from: data.from || "white" };
   return (
     <Section className="py-24">
       <Container className="flex flex-col lg:flex-row gap-8 items-stretch justify-between">
@@ -82,11 +82,7 @@ export const Project = ({ data }) => {
           </div>
 
           <div className="flex flex-row gap-8 items-stretch justify-between min-h-[8rem] w-full">
-            <SoftwareItem
-              type="bg"
-              className="!bg-parlourDark"
-              basis="50%"
-            >
+            <SoftwareItem type="bg" className="!bg-parlourDark" basis="50%">
               <SoftwareItem
                 type="text"
                 className="bg-white h-full w-full leading-tight text-sm md:text-base lg:text-lg"
@@ -105,7 +101,10 @@ export const Project = ({ data }) => {
                 className="bg-white h-full w-full"
                 center
               >
-                <TextGradient className="text-lg md:text-xl lg:text-2xl" {...gradient}>
+                <TextGradient
+                  className="text-lg md:text-xl lg:text-2xl"
+                  {...gradient}
+                >
                   Case study
                 </TextGradient>
               </SoftwareItem>

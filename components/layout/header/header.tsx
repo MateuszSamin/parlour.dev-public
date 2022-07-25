@@ -9,7 +9,7 @@ import ParlourLogo from "../../../public/parlour-dev-white.webp";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import ReactGA from "react-ga4";
 import { BiChevronDown } from "react-icons/bi";
-import { NavbarPopup, Product } from "./navbarPopup";
+import { NavbarPopup, NavbarPopupMobile } from "./navbarPopup";
 
 export const Header = ({ data }) => {
   // If we're on an admin path, other links should also link to their admin paths
@@ -89,7 +89,12 @@ export const Header = ({ data }) => {
                       <div className="flex flex-row items-center gap-1 cursor-pointer">
                         <p>Services</p> <BiChevronDown className="mt-1" />
                       </div>
-                      <NavbarPopup className="group-hover:visible group-hover:opacity-100 opacity-0 invisible transition-all duration-100" />
+                      {data.productsCollections && (
+                        <NavbarPopup
+                          className="group-hover:visible group-hover:opacity-100 opacity-0 invisible transition-all duration-100"
+                          data={data.productsCollections}
+                        />
+                      )}
                     </div>
                   </li>
                 </ul>
@@ -147,22 +152,7 @@ export const Header = ({ data }) => {
                     <h1 className="text-center text-gray-500 font-semibold text-lg">
                       Explore our products
                     </h1>
-                    <Product
-                      title="Parlour Care"
-                      icon="https://res.cloudinary.com/parlour-development/image/upload/v1658739273/logos/parlourcareplus1_ou2u4k.webp"
-                      smallIcon
-                      href="/care"
-                    ></Product>
-                    <Product
-                      title="Blockchain Development"
-                      icon="https://res.cloudinary.com/parlour-development/image/upload/v1655748679/dapp_hcwmew.webp"
-                      href="/projects"
-                    ></Product>
-                    <Product
-                      title="Auditing"
-                      icon="https://res.cloudinary.com/parlour-development/image/upload/v1658741043/cloud-lock-4065319-3361351_hugcz7.png"
-                      href="/auditing"
-                    ></Product>
+                    <NavbarPopupMobile data={data.productsCollections} />
                   </div>
                 </div>
               </Menu>
