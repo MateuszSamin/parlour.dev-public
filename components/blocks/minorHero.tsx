@@ -11,8 +11,10 @@ export const MinorHero = ({ data }) => {
   return (
     <Section className={data?.compact ? "py-12" : "py-24"}>
       <Container className="!max-w-6xl" size="custom">
-        <div className="flex flex-col relative leading-snug w-full">
-          <div className="min-h-[30rem] w-full md:w-9/12 py-6 md:py-24 px-6 md:pl-12 md:pr-[25%] bg-parlourDark flex flex-col justify-end items-center rounded-[37px]">
+        <div className={`flex flex-col relative leading-snug w-full ${data.reverse ? "items-end" : ""}`}>
+          <div className={`min-h-[30rem] w-full md:w-9/12 py-6 md:py-24 px-6\
+          ${data.reverse ? "md:pl-[25%] md:pr-12" : "md:pl-12 md:pr-[25%]"}\
+          bg-parlourDark flex flex-col justify-end rounded-[37px]`}>
             <div
               className="w-full px-4 md:px-6 prose md:prose-xl prose-dark bg-clip-text children:transparent"
               style={{
@@ -26,7 +28,10 @@ export const MinorHero = ({ data }) => {
               <TinaMarkdown content={data.text} />
             </div>
             {data.picture && (
-              <div className="w-full max-w-[30rem] md:max-w-none h-56 md:h-auto md:w-auto relative md:absolute md:top-[10%] md:bottom-[10%] md:left-[50%] md:right-0 rounded-[27x] md:rounded-[37px] shadow-lg">
+              <div className={`w-full max-w-[30rem] md:max-w-none h-56 md:h-auto md:w-auto relative md:absolute md:top-[10%] md:bottom-[10%]\
+              ${data.reverse ? "md:left-0 md:right-[50%]" : "md:left-[50%] md:right-0"}\
+              rounded-[27x] md:rounded-[37px] shadow-lg
+              self-center`}>
                 <Image
                   layout="fill"
                   objectFit="cover"
@@ -70,6 +75,11 @@ export const minorHeroBlockSchema: TinaTemplate = {
       type: "boolean",
       label: "Compact (smaller vertical padding)",
       name: "compact",
+    },
+    {
+      type: "boolean",
+      label: "Reverse (image on the other side)",
+      name: "reverse"
     },
     {
       type: "string",

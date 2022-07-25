@@ -166,6 +166,7 @@ fragment PageParts on Page {
       text
       picture
       compact
+      reverse
       from
       to
     }

@@ -316,6 +316,7 @@ type PageBlocksMinorHero {
   text: JSON
   picture: String
   compact: Boolean
+  reverse: Boolean
   from: String
   to: String
 }
@@ -555,6 +556,7 @@ input PageBlocksMinorHeroMutation {
   text: JSON
   picture: String
   compact: Boolean
+  reverse: Boolean
   from: String
   to: String
 }
