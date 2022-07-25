@@ -36,26 +36,26 @@ export const Footer = ({ data, icon, rawData }) => {
           </span>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-t-10 gap-x-[10rem] justify-center items-start">
-          <div className="text-md mx-auto md:mx-0">
+        <div className="flex flex-col lg:flex-row gap-t-10 gap-x-[10rem] justify-center items-start">
+          <div className="text-md lg:mx-auto md:mx-0">
             <img
               className="w-64"
               src="/parlour-dev.webp"
               alt="Parlour Development Logo"
             />
-            <div className="mt-2 flex flex-row items-center">
+            <div className="hidden lg:flex flex-row items-center mt-2">
               <IoMail />
               <p className="ml-2">contact@parlour.dev</p>
             </div>
-            <div className="mt-2 flex flex-row items-center">
+            <div className="hidden lg:flex flex-row items-center mt-2">
               <IoBriefcase />
               <p className="ml-2">Parlour Development LLC</p>
             </div>
-            <p className="ml-8 mb-2 text-left">
+            <p className="hidden lg:block ml-8 mb-2 text-left">
               Warszawska 40/2A, <br /> 40-008 Katowice
             </p>
             <Link href="/privacy">
-              <a target="_blank" className="ml-8">
+              <a target="_blank" className="hidden lg:block ml-8">
                 Privacy Policy
               </a>
             </Link>

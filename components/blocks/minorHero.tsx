@@ -22,7 +22,7 @@ export const MinorHero = ({ data }) => {
           bg-parlourDark flex flex-col justify-end rounded-[37px]`}
           >
             <div
-              className="w-full px-4 md:px-6 prose md:prose-xl prose-dark bg-clip-text children:transparent"
+              className="w-full px-4 md:px-6 prose md:prose-xl prose-dark !bg-clip-text children:transparent"
               style={{
                 background: `linear-gradient(to bottom right, ${gradient.from}, ${gradient.to})`,
                 backgroundClip: "text",

@@ -27,7 +27,7 @@ export const Project = ({ data }) => {
         </div>
         <ThirdContainer>
           <SoftwareItem type="bg" {...gradient} className="h-1/3">
-            <SoftwareItem type="text" className="bg-white h-full" center>
+            <SoftwareItem type="text" className="bg-white h-full !rounded-[27px]" center>
               <StrokedText {...gradient}>{data.name}</StrokedText>
             </SoftwareItem>
           </SoftwareItem>
@@ -38,7 +38,7 @@ export const Project = ({ data }) => {
           >
             <TextGradient
               {...gradient}
-              className="font-bold text-xl lg:text-2xl text-left w-full"
+              className="font-bold text-xl lg:text-2xl text-left leading-[1.2] w-full"
             >
               {data.tagline}
             </TextGradient>
@@ -47,14 +47,16 @@ export const Project = ({ data }) => {
       </Container>
 
       {data.description && (
-        <Container className="flex flex-col gap-3 prose-lg">
+        <Container className="flex flex-col gap-3">
           <h1 className="text-2xl font-bold">What was the project about?</h1>
+          <div className="prose-xl">
           <TinaMarkdown content={data.description} />
+          </div>
         </Container>
       )}
 
       <Container className="flex flex-col gap-3 items-stretch justify-between">
-        <h1 className="text-xl font-bold">What did we build?</h1>
+        <h1 className="text-2xl font-bold">What did we build?</h1>
 
         <div className="flex flex-col gap-8 items-stretch justify-between">
           <div className="flex flex-col lg:flex-row gap-8 items-stretch justify-between min-h-[10rem]">
@@ -82,10 +84,14 @@ export const Project = ({ data }) => {
           </div>
 
           <div className="flex flex-row gap-8 items-stretch justify-between min-h-[8rem] w-full">
-            <SoftwareItem type="bg" className="!bg-parlourDark" basis="50%">
+            <SoftwareItem
+              type="bg"
+              className="!bg-parlourDark"
+              basis="65%"
+            >
               <SoftwareItem
                 type="text"
-                className="bg-white h-full w-full leading-tight text-sm md:text-base lg:text-lg"
+                className="bg-white h-full w-full leading-tight !rounded-[28px] text-sm md:text-base lg:text-xl"
               >
                 <p>Seems interesting?</p>
                 <p>Check out</p>
@@ -98,7 +104,7 @@ export const Project = ({ data }) => {
             <SoftwareItem type="bg" basis="50%" {...gradient}>
               <SoftwareItem
                 type="text"
-                className="bg-white h-full w-full"
+                className="bg-white h-full w-full !rounded-[27px]"
                 center
               >
                 <TextGradient

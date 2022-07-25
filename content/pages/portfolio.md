@@ -18,12 +18,44 @@ blocks:
       page](https://kolor.social), a [dapp](https://app.kolor.social) and a
       back-end which handles the app.
     built: >
-      Front-end was written in ReactJS, smart contracts were written in  
-      Solidity. Back-end was written in Golang, with further integration 
-      provided by a decentralized file hosting - Storj.
+      Kolor was a project that was in a very early stage when we started working
+      on it, so we had complete freedom over choosing the technology solutions.
+      What we delivered was a fullstack Web3 application that consisted of
+      various elements. The project started with designing the UI and UX of the
+      app. We wanted to have a simple Twitter-like design with the extraordinary
+      Web3 feel. We wanted the user to feel like they're travelling through
+      outer space while scrolling thorugh Kolor. Therefore, we used the dark and
+      mystical color palette. Completed with on-hover animations, we delivered a
+      great user experience. Then we moved on to front-end programming. Using
+      ReactJS, CSS, useDapp, ethers.js and various other libraries, we delivered
+      a UI that looked exactly like the design and was fully responsive. Then we
+      moved on to programming the smart contracts. These were written in
+      Solidity using Hardhat enviroment and thoroughly tested using AI-enhanced
+      fuzzing. To make the UX smoother and less costly, we moved some of the
+      business logic and operations off-chain. The back-end was written in
+      Golang, with the goal to be robust and lightning-fast.
+
+
+      Smart contracts for this project were quite complex, as Kolor is an
+      innovative project and in some cases we had to invent solutions to
+      never-seen-before problems. We managed to do that and ship the application
+      just as intended, meeting all of our  deadlines. The entire development
+      process took us about 3 months.
+
+
+      We finished off the project by creating a great looking landing page with
+      ReactJS and TailwindCSS,  so the user can get to know Kolor before jumping
+      in.
     stack: >-
-      ReactJS, useDapp, ethers.js, TypeScript, CSS, Golang, Infura, Netflify,
-      various Ethereum and Binance Smart Chain APIs
+      ReactJS for the front-end logic and components, CSS for styling and making
+      it look great, useDapp and ethers.js for seamless integration with
+      blockchain, TypeScript to keep the project scalable and avoid tech debt,
+      Golang for creating a robust off-chain back-end, Infura for connecting to
+      the blockchain network using their node, Netlify for building and
+      deploying the app, GitHub for version tracking and collaboration and
+      various less relevant Ethereum and Binance Smart Chain APIs. The smart
+      contracts were written in Solidity with the use of Hardhard development
+      enviroment.
     pictures:
       - image: >-
           https://res.cloudinary.com/parlour-development/image/upload/v1656273509/projects/kolor2_w5ut0j.webp
@@ -54,15 +86,37 @@ blocks:
       entirety was consistent with the PukPuk logo. Simultaneously, work began
 
       &#x20;on implementing the front-end and the back-end.
-    built: |
+    built: >
       The project consisted of creating a mobile app, which lets users&#x20;
-      offer and use various services. PukPuk was created from scratch by us.
 
-      We chose the tech stack and the app architecture. Front-end was&#x20;
-      written in React Native while back-end was created using Golang and AWS.
+      offer and use various services. We were able to create the project from
+      scratch, using scalable tech and making it robust.
+
+
+      PukPuk started with creating the design for the app. We wanted to deliver
+      a friendly, yet simple design and would be intuitive and easy to navigate.
+      We went for warm colors that would make the app look welcoming to use.
+
+
+      Then we went on to build the front-end of the app using React Native. The
+      biggest challange here was implementing a map with user-created pins into
+      the application, but we managed to swiftly overcome it. We added user
+      account with email and password, as well as integration with Facebook and
+      Google sign-ins.
+
+
+      We chose to create the back-end using Golang and AWS, for the easy
+      scalability and low starting cost, as PukPuk was a startup in an early
+      stage where cutting costs was very important.
+
+
+      We also created a landing page for the project using simple HTML and CSS
+      to introduce new users to the app and encourage them to try it out!
     stack: >-
-      React Native, TypeScript, StyledComponents, CSS, Golang. We also built an
-      HTML / CSS landing page for the project.
+      React Native for the front-end markup and logic, TypeScript and
+      StyledComponents for scalability, CSS for styling, Golang for the
+      back-end. We also built a responsive HTML / CSS landing page for the
+      project.
     pictures:
       - image: >-
           https://res.cloudinary.com/parlour-development/image/upload/v1656268499/projects/ppscreens_ueqian.webp

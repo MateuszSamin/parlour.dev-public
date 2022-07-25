@@ -124,7 +124,7 @@ const Item = ({
   <div
     className={`rounded-[30px] ${className}\
     ${type === "text" && "p-5"}\
-    ${type === "bg" && "p-[0.18rem] md:p-1"}\
+    ${type === "bg" && "p-[0.13rem] md:p-[0.2rem]"}\
     shadow-lg\
     ${center ? "flex flex-col items-center justify-center" : ""}`}
     style={{
