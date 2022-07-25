@@ -51,20 +51,24 @@ const PieceOfSoftware = ({ data }) => {
         >
           <TinaMarkdown content={data.description} />
         </Item>
-        <Item
-          type="bg"
-          className="hover:scale-95 duration-300 transition min-h-1/3 !rounded-[33.5px]"
-          {...gradient}
-        >
-          <Item
-            type="text"
-            className="h-full bg-white flex items-center justify-center"
-          >
-            <TextGradient href={data.href} className="text-xl" {...gradient}>
-              Browse code
-            </TextGradient>
-          </Item>
-        </Item>
+        <Link href={data.href}>
+          <a target="_blank" referrerPolicy="no-referrer">
+            <Item
+              type="bg"
+              className="hover:scale-95 duration-300 transition min-h-1/3 p-[0.18rem] md:p-1 !rounded-[33.5px]"
+              {...gradient}
+            >
+              <Item
+                type="text"
+                className="h-full bg-white flex items-center justify-center"
+              >
+                <TextGradient className="text-xl" {...gradient}>
+                  Browse code
+                </TextGradient>
+              </Item>
+            </Item>
+          </a>
+        </Link>
       </ThirdContainer>
       <ThirdContainer>
         <Item className="relative overflow-hidden md:h-3/5 h-64">

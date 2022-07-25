@@ -36,7 +36,7 @@ export const Footer = ({ data, icon, rawData }) => {
           </span>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-t-10 gap-x-[10rem] justify-center items-start">
+        <div className="flex flex-col md:flex-row gap-t-10 gap-x-40 justify-center items-center md:items-start flex-wrap gap-y-10">
           <div className="text-md lg:mx-auto md:mx-0">
             <img
               className="w-64"
