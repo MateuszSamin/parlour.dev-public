@@ -26,6 +26,18 @@ fragment GlobalParts on Global {
       href
       label
     }
+    productsCollections {
+      __typename
+      label
+      products {
+        __typename
+        label
+        icon
+        smallIcon
+        href
+        description
+      }
+    }
   }
   footer {
     __typename
@@ -92,6 +104,7 @@ fragment PageParts on Page {
     }
     ... on PageBlocksReasons {
       heading
+      monochrome
       items {
         __typename
         image
@@ -149,17 +162,25 @@ fragment PageParts on Page {
     }
     ... on PageBlocksProject {
       name
+      tagline
       description
-      casestudy
+      built
+      stack
       pictures {
         __typename
         image
       }
+      from
+      to
     }
     ... on PageBlocksMinorHero {
       heading
       text
       picture
+      compact
+      reverse
+      from
+      to
     }
     ... on PageBlocksPadding {
       height
