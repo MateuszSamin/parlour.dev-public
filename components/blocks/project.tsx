@@ -27,7 +27,11 @@ export const Project = ({ data }) => {
         </div>
         <ThirdContainer>
           <SoftwareItem type="bg" {...gradient} className="h-1/3">
-            <SoftwareItem type="text" className="bg-white h-full !rounded-[27px]" center>
+            <SoftwareItem
+              type="text"
+              className="bg-white h-full !rounded-[27px]"
+              center
+            >
               <StrokedText {...gradient}>{data.name}</StrokedText>
             </SoftwareItem>
           </SoftwareItem>
@@ -50,7 +54,7 @@ export const Project = ({ data }) => {
         <Container className="flex flex-col gap-3">
           <h1 className="text-2xl font-bold">What was the project about?</h1>
           <div className="prose-xl">
-          <TinaMarkdown content={data.description} />
+            <TinaMarkdown content={data.description} />
           </div>
         </Container>
       )}
@@ -84,11 +88,7 @@ export const Project = ({ data }) => {
           </div>
 
           <div className="flex flex-row gap-8 items-stretch justify-between min-h-[8rem] w-full">
-            <SoftwareItem
-              type="bg"
-              className="!bg-parlourDark"
-              basis="65%"
-            >
+            <SoftwareItem type="bg" className="!bg-parlourDark" basis="65%">
               <SoftwareItem
                 type="text"
                 className="bg-white h-full w-full leading-tight !rounded-[28px] text-sm md:text-base lg:text-xl"

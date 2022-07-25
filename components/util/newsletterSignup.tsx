@@ -102,13 +102,17 @@ export const NewsletterSignup = ({ buttonText }) => {
               </div>
             </div>
 
-            <div className={`transition-all duration-300\
+            <div
+              className={`transition-all duration-300\
             ${showThankYou ? "opacity-100 visible" : "opacity-0 invisible"}\
             absolute left-0 right-0 bottom-0 top-0 p-6\
             flex flex-col items-center justify-center\
-            prose prose-dark text-center`}>
+            prose prose-dark text-center`}
+            >
               <h1>Thank you for signing up!</h1>
-              {showThankYou && <RegisterGAOnce category="Contact" action="newsletter signup" />}
+              {showThankYou && (
+                <RegisterGAOnce category="Contact" action="newsletter signup" />
+              )}
             </div>
           </div>
         </div>
