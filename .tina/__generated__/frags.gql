@@ -90,6 +90,7 @@ fragment PageParts on Page {
     }
     ... on PageBlocksContent {
       body
+      large
       color
     }
     ... on PageBlocksTestimonial {

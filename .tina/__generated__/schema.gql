@@ -225,6 +225,7 @@ type PageBlocksFeatures {
 
 type PageBlocksContent {
   body: JSON
+  large: Boolean
   color: String
 }
 
@@ -479,6 +480,7 @@ input PageBlocksFeaturesMutation {
 
 input PageBlocksContentMutation {
   body: JSON
+  large: Boolean
   color: String
 }
 

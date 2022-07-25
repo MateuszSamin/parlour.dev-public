@@ -9,7 +9,9 @@ import { Section } from "../util/section";
 export const ContentStack = ({ data, parentField }) => {
   return (
     <Section color={data.color} className="py-24 text-center">
-      <MdSectionHeading data={data.heading} />
+      {data.heading?.children?.length > 1 && (
+        <MdSectionHeading data={data.heading} />
+      )}
       <Container className="flex flex-col gap-y-2" size="custom">
         {data.items &&
           data.items.map(function (block: any, i: number) {

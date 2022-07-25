@@ -10,7 +10,7 @@ export default function HomePage(
   const posts = props.data.postConnection.edges;
 
   return (
-    <Layout>
+    <Layout rawData={props.data} data={props.data.global as any}>
       <Section className="flex-1 mt-4">
         <Container size="large" className="!max-w-4xl">
           <Posts data={posts} />

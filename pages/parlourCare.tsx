@@ -8,10 +8,11 @@ import Image from "next/image";
 import CareIMG from "../public/parlour-care1.png";
 import ParlourCarePlus from "../public/uploads/parlourcareplus1.png";
 import ParlourCarePlusOutline from "../public/uploads/parlourcareplusoutline1.png";
+import { ExperimentalGetTinaClient } from "../.tina/__generated__/types";
 
-export default function ParlourCarePage() {
+function ParlourCarePage() {
   return (
-    <Layout>
+    <>
       <Section>
         <Container className="py-10">
           <div className="text-parlourDark lg:text-6xl text-3xl font-bold flex flex-col items-center z-30">
@@ -68,6 +69,28 @@ export default function ParlourCarePage() {
       <Numbers />
       <PlanComparisonBoxes />
       <PlanComparisonTable />
-    </Layout>
+    </>
   );
 }
+
+export const getStaticProps = async () => {
+  const client = ExperimentalGetTinaClient();
+  // const tinaProps = await client.ContentQuery({
+  //   relativePath: `empty.md`,
+  // });
+  const tinaProps = await client.global({
+    relativePath: "/index.json",
+  });
+  return {
+    props: {
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
+    },
+  };
+};
+
+export type AsyncReturnType<T extends (...args: any) => Promise<any>> =
+  T extends (...args: any) => Promise<infer R> ? R : any;
+
+export default ParlourCarePage;
