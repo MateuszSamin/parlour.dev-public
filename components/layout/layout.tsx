@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { Header } from "./header";
+import { Header } from "./header/header";
 import { Footer } from "./footer";
 import layoutData from "../../content/global/index.json";
 import SEOImage from "../../assets/img/parlour-seo.png";

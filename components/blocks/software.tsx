@@ -119,7 +119,7 @@ const Item = ({
   to = "",
   center = false,
   basis = undefined,
-  style = {}
+  style = {},
 }) => (
   <div
     className={`rounded-[30px] ${className}\
@@ -131,7 +131,7 @@ const Item = ({
       background:
         type === "bg" && `linear-gradient(to bottom right, ${from}, ${to})`,
       flexBasis: basis,
-      ...style
+      ...style,
     }}
   >
     {children}

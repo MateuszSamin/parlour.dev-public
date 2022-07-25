@@ -12,7 +12,7 @@ import {
 } from "./software";
 
 export const Project = ({ data }) => {
-  const gradient = { to: data.to || "black", from: data.from || "white" }
+  const gradient = { to: data.to || "black", from: data.from || "white" };
   return (
     <Section className="py-24">
       <Container className="flex flex-col lg:flex-row gap-8 items-stretch justify-between">
@@ -107,7 +107,10 @@ export const Project = ({ data }) => {
                 className="bg-white h-full w-full !rounded-[27px]"
                 center
               >
-                <TextGradient className="text-lg md:text-xl lg:text-2xl" {...gradient}>
+                <TextGradient
+                  className="text-lg md:text-xl lg:text-2xl"
+                  {...gradient}
+                >
                   Case study
                 </TextGradient>
               </SoftwareItem>
