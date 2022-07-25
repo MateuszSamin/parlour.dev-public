@@ -340,7 +340,25 @@ type PageBlocksPadding {
   height: String
 }
 
-union PageBlocks = PageBlocksHero | PageBlocksFeatures | PageBlocksContent | PageBlocksTestimonial | PageBlocksReasons | PageBlocksClientsRoll | PageBlocksContentStack | PageBlocksConsultation | PageBlocksFaq | PageBlocksSoftware | PageBlocksNewsletter | PageBlocksProject | PageBlocksMinorHero | PageBlocksPadding
+type PageBlocksPlanComparisonAnalytic {
+  label: String
+}
+
+type PageBlocksPlanComparisonCareplus {
+  label: String
+}
+
+type PageBlocksPlanComparisonPerf {
+  label: String
+}
+
+type PageBlocksPlanComparison {
+  analytic: [PageBlocksPlanComparisonAnalytic]
+  careplus: [PageBlocksPlanComparisonCareplus]
+  perf: [PageBlocksPlanComparisonPerf]
+}
+
+union PageBlocks = PageBlocksHero | PageBlocksFeatures | PageBlocksContent | PageBlocksTestimonial | PageBlocksReasons | PageBlocksClientsRoll | PageBlocksContentStack | PageBlocksConsultation | PageBlocksFaq | PageBlocksSoftware | PageBlocksNewsletter | PageBlocksProject | PageBlocksMinorHero | PageBlocksPadding | PageBlocksPlanComparison
 
 type Page implements Node & Document {
   blocks: [PageBlocks]
@@ -595,6 +613,24 @@ input PageBlocksPaddingMutation {
   height: String
 }
 
+input PageBlocksPlanComparisonAnalyticMutation {
+  label: String
+}
+
+input PageBlocksPlanComparisonCareplusMutation {
+  label: String
+}
+
+input PageBlocksPlanComparisonPerfMutation {
+  label: String
+}
+
+input PageBlocksPlanComparisonMutation {
+  analytic: [PageBlocksPlanComparisonAnalyticMutation]
+  careplus: [PageBlocksPlanComparisonCareplusMutation]
+  perf: [PageBlocksPlanComparisonPerfMutation]
+}
+
 input PageBlocksMutation {
   hero: PageBlocksHeroMutation
   features: PageBlocksFeaturesMutation
@@ -610,6 +646,7 @@ input PageBlocksMutation {
   project: PageBlocksProjectMutation
   minorHero: PageBlocksMinorHeroMutation
   padding: PageBlocksPaddingMutation
+  planComparison: PageBlocksPlanComparisonMutation
 }
 
 input PageMutation {

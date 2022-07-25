@@ -14,6 +14,7 @@ import { Newsletter } from "./blocks/newsletter";
 import { Project } from "./blocks/project";
 import { MinorHero } from "./blocks/minorHero";
 import { Padding } from "./blocks/padding";
+import { PlanComparisonBoxes } from "./blocks/planComparisonBoxes";
 
 const blockElements: {
   [K in PageBlocks["__typename"]]: ({ data, parentField }) => JSX.Element;
@@ -32,6 +33,7 @@ const blockElements: {
   PageBlocksProject: Project,
   PageBlocksMinorHero: MinorHero,
   PageBlocksPadding: Padding,
+  PageBlocksPlanComparison: PlanComparisonBoxes
 };
 
 export const Blocks = (props: Omit<Page, "id" | "_sys" | "_values">) => {

@@ -14,6 +14,7 @@ import { newsletterBlockSchema } from "../components/blocks/newsletter"
 import { projectBlockSchema } from "../components/blocks/project"
 import { minorHeroBlockSchema } from "../components/blocks/minorHero"
 import { paddingBlockSchema } from "../components/blocks/padding"
+import { planComparisonBoxesSchema} from "../components/blocks/planComparisonBoxes"
 
 const schema = defineSchema({
   collections: [
@@ -409,7 +410,8 @@ const schema = defineSchema({
             newsletterBlockSchema,
             projectBlockSchema,
             minorHeroBlockSchema,
-            paddingBlockSchema
+            paddingBlockSchema,
+            planComparisonBoxesSchema
           ],
         },
       ],
