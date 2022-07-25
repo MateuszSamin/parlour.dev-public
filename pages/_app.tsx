@@ -5,7 +5,9 @@ import ReactGA from "react-ga4";
 import { NextWebVitalsMetric } from "next/app";
 
 const App = ({ Component, pageProps }) => {
-  ReactGA.initialize("G-YYKTS21T84");
+  ReactGA.initialize("G-YYKTS21T84", {
+    testMode: process.env.NODE_ENV !== "production"
+  });
 
   return (
     <TinaProvider>

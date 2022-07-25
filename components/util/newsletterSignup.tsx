@@ -2,13 +2,22 @@ import Link from "next/link";
 import { useState } from "react";
 import { signup } from "../../util/campaignSignup";
 import ReactGA from "react-ga4";
+import { RegisterGAOnce } from "./registerGAOnce";
 
 export const NewsletterSignup = ({ buttonText }) => {
+  const [showThankYou, setShowThankYou] = useState(false);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
   const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
+    setShowThankYou(true);
+
+    if (name.length < 4 || email.length < 4) {
+      return;
+    }
+
     setName("");
     setEmail("");
     signup("newsletter-10", email, name);
@@ -34,8 +43,11 @@ export const NewsletterSignup = ({ buttonText }) => {
           </p>
         </div>
         <div className="mt-8 lg:mt-0 static lg:absolute max-w-[500px] lg:max-w-none left-[50%] right-[3%] top-0 bottom-0 p-1 h-full rounded-[30px] bg-gradient-to-r from-parlourGreen to-parlourBlue">
-          <div className="w-full h-full p-8 rounded-[30px] bg-parlourDark">
-            <div className="lg:mt-8 flex flex-col h-full">
+          <div className="relative w-full h-full p-8 rounded-[30px] bg-parlourDark">
+            <div
+              className={`lg:mt-8 flex flex-col h-full transition-all duration-300\
+             ${showThankYou ? "opacity-0 invisible" : "opacity-100 visible"}`}
+            >
               <h1 className="text-center font-bold prose-dark text-white">
                 Sign up
               </h1>
@@ -71,12 +83,6 @@ export const NewsletterSignup = ({ buttonText }) => {
                   <button
                     type="submit"
                     className="hover:scale-95 duration-300 transition min-w-[45%] w-[fit-content] mx-auto flex items-center justify-center mt-8 py-2 px-8 rounded-br-[18px] rounded-tl-[18px] border-transparent text-base font-semibold text-white bg-gradient-to-r from-parlourGreen to-parlourBlue"
-                    onClick={() =>
-                      ReactGA.event({
-                        category: "Contact",
-                        action: "NewsletterEnroll",
-                      })
-                    }
                   >
                     {buttonText}
                   </button>
@@ -94,6 +100,15 @@ export const NewsletterSignup = ({ buttonText }) => {
                   </p>
                 </div>
               </div>
+            </div>
+
+            <div className={`transition-all duration-300\
+            ${showThankYou ? "opacity-100 visible" : "opacity-0 invisible"}\
+            absolute left-0 right-0 bottom-0 top-0 p-6\
+            flex flex-col items-center justify-center\
+            prose prose-dark text-center`}>
+              <h1>Thank you for signing up!</h1>
+              {showThankYou && <RegisterGAOnce category="Contact" action="newsletter signup" />}
             </div>
           </div>
         </div>
