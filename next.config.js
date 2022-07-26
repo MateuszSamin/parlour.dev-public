@@ -12,9 +12,4 @@ module.exports = withSvgr({
   images: {
     domains: ["res.cloudinary.com"],
   },
-  experimental: {
-    images: {
-      layoutRaw: true,
-    },
-  },
 });

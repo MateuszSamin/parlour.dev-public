@@ -1,13 +1,15 @@
 import React from "react";
 import Link from "next/link";
-import { Container } from "../util/container";
-import { Icon } from "../util/icon";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import { Container } from "../../util/container";
+import { Icon } from "../../util/icon";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 import { stack as Menu } from "react-burger-menu";
 import { BsArrowRight } from "react-icons/bs";
-import ParlourLogo from "../../public/parlour-dev-white.webp";
+import ParlourLogo from "../../../public/parlour-dev-white.webp";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import ReactGA from "react-ga4";
+import { BiChevronDown } from "react-icons/bi";
+import { NavbarPopup, NavbarPopupMobile } from "./navbarPopup";
 
 export const Header = ({ data }) => {
   // If we're on an admin path, other links should also link to their admin paths
@@ -56,16 +58,6 @@ export const Header = ({ data }) => {
             <h4 className="select-none text-lg font-bold tracking-tight my-4 transition duration-150 ease-out transform">
               <Link href="/" passHref>
                 <a className="flex items-center h-6 w-auto">
-                  {/* <Icon
-                    parentColor={data.color}
-                    data={{
-                      name: data.icon.name,
-                      color: data.icon.color,
-                      style: data.icon.style,
-                    }}
-                    className="inline-block h-auto w-10 mr-1"
-                  />{" "}
-                  Parlour Development */}
                   <img className="h-10" src={ParlourLogo.src} alt="logo" />
                 </a>
               </Link>
@@ -83,7 +75,7 @@ export const Header = ({ data }) => {
                             location.pathname == "/"
                           : windowUrl.includes(item.href);
                       return (
-                        <li key={`${item.label}-${i}`} className="">
+                        <li key={`${item.label}-${i}`} style={{ order: i + 1 }}>
                           <Link href={`${prefix}/${item.href}`} passHref>
                             <a className="select-none	text-base inline-block tracking-wide font-regular transition duration-150 ease-out opacity-70 hover:opacity-100 py-5">
                               {item.label}
@@ -92,6 +84,19 @@ export const Header = ({ data }) => {
                         </li>
                       );
                     })}
+                  <li>
+                    <div className="group select-none	text-base inline-block tracking-wide font-regular transition duration-150 ease-out opacity-70 hover:opacity-100 py-5">
+                      <div className="flex flex-row items-center gap-1 cursor-pointer">
+                        <p>Services</p> <BiChevronDown className="mt-1" />
+                      </div>
+                      {data.productsCollections && (
+                        <NavbarPopup
+                          className="group-hover:visible group-hover:opacity-100 opacity-0 invisible transition-all duration-100"
+                          data={data.productsCollections}
+                        />
+                      )}
+                    </div>
+                  </li>
                 </ul>
               </>
             )}
@@ -117,30 +122,39 @@ export const Header = ({ data }) => {
                 customBurgerIcon={false}
                 isOpen={isMenuOpen}
                 width="100%"
-                className="w-full h-screen bg-white mt-3 md:mt-6"
+                className="w-full h-screen bg-white mt-3 md:mt-6 flex flex-col"
               >
-                <ul className="fixed h-screen z-50 flex !text-parlourDark bg-white flex-col w-full pt-8">
-                  {data.nav &&
-                    data.nav.map((item, i) => {
-                      const activeItem =
-                        item.href === ""
-                          ? typeof location !== "undefined" &&
-                            location.pathname == "/"
-                          : windowUrl.includes(item.href);
-                      return (
-                        <li
-                          key={`${item.label}-${i}`}
-                          className="flex mx-auto justify-center items-center"
-                        >
-                          <Link href={`${prefix}/${item.href}`} passHref>
-                            <a className="select-none inline-block tracking-wide !text-parlourDark font-semibold ease-out hover:opacity-100 py-1 md:py-3 xl:py-6 text-xl hover:scale-110 transition duration-300">
-                              {item.label}
-                            </a>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                </ul>
+                <div>
+                  <ul className="z-50 flex !text-parlourDark bg-white flex-col w-full pt-8">
+                    {data.nav &&
+                      data.nav.map((item, i) => {
+                        const activeItem =
+                          item.href === ""
+                            ? typeof location !== "undefined" &&
+                              location.pathname == "/"
+                            : windowUrl.includes(item.href);
+                        return (
+                          <li
+                            key={`${item.label}-${i}`}
+                            className="flex mx-auto justify-center items-center"
+                          >
+                            <Link href={`${prefix}/${item.href}`} passHref>
+                              <a className="select-none inline-block tracking-wide !text-parlourDark font-semibold ease-out hover:opacity-100 py-1 md:py-3 xl:py-6 text-lg hover:scale-110 transition duration-300">
+                                {item.label}
+                              </a>
+                            </Link>
+                          </li>
+                        );
+                      })}
+                  </ul>
+
+                  <div className="absolute bottom-[10%] flex flex-col gap-3 w-[90%] left-[5%] right-[5%] items-center justify-between">
+                    <h1 className="text-center text-gray-500 font-semibold text-lg">
+                      Explore our products
+                    </h1>
+                    <NavbarPopupMobile data={data.productsCollections} />
+                  </div>
+                </div>
               </Menu>
             </div>
           )}

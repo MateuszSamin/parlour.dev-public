@@ -6,7 +6,7 @@ import { NextWebVitalsMetric } from "next/app";
 
 const App = ({ Component, pageProps }) => {
   ReactGA.initialize("G-YYKTS21T84", {
-    testMode: process.env.NODE_ENV !== "production"
+    testMode: process.env.NODE_ENV !== "production",
   });
 
   return (

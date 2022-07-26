@@ -5,7 +5,13 @@ import { AiFillInstagram } from "react-icons/ai";
 import { Container } from "../../util/container";
 import { Icon } from "../../util/icon";
 
-import { IoBriefcase, IoCall, IoMail, IoPhonePortrait, IoPhonePortraitOutline } from "react-icons/io5";
+import {
+  IoBriefcase,
+  IoCall,
+  IoMail,
+  IoPhonePortrait,
+  IoPhonePortraitOutline,
+} from "react-icons/io5";
 
 export const Footer = ({ data, icon, rawData }) => {
   return (
@@ -21,34 +27,35 @@ export const Footer = ({ data, icon, rawData }) => {
             Direct <b>contact</b>
           </p>
           <span className="mt-6 text-lg flex flex-row justify-center items-center gap-4">
-            <IoMail /><p>contact@parlour.dev</p>
+            <IoMail />
+            <p>contact@parlour.dev</p>
           </span>
           <span className="mt-6 mb-12 text-lg flex flex-row justify-center items-center gap-4">
-            <IoPhonePortrait /><p>+48 511 610 544</p>
+            <IoPhonePortrait />
+            <p>+48 511 610 544</p>
           </span>
         </div>
 
-        <p></p>
         <div className="flex flex-col md:flex-row gap-t-10 gap-x-40 justify-center items-center md:items-start flex-wrap gap-y-10">
-          <div className="text-md mx-auto md:mx-0">
+          <div className="text-md lg:mx-auto md:mx-0">
             <img
               className="w-64"
               src="/parlour-dev.webp"
               alt="Parlour Development Logo"
             />
-            <div className="mt-2 flex flex-row items-center">
-            <IoMail />
+            <div className="hidden lg:flex flex-row items-center mt-2">
+              <IoMail />
               <p className="ml-2">contact@parlour.dev</p>
             </div>
-            <div className="mt-2 flex flex-row items-center">
-             <IoBriefcase />
+            <div className="hidden lg:flex flex-row items-center mt-2">
+              <IoBriefcase />
               <p className="ml-2">Parlour Development LLC</p>
             </div>
-            <p className="ml-8 mb-2 text-left">
+            <p className="hidden lg:block ml-8 mb-2 text-left">
               Warszawska 40/2A, <br /> 40-008 Katowice
             </p>
             <Link href="/privacy">
-              <a target="_blank" className="ml-8">
+              <a target="_blank" className="hidden lg:block ml-8">
                 Privacy Policy
               </a>
             </Link>

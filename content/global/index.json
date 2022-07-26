@@ -10,16 +10,43 @@
         "label": "Projects"
       },
       {
-        "href": "services",
-        "label": "Services"
+        "href": "industries",
+        "label": "Industries"
       },
       {
         "href": "posts",
         "label": "Blog"
+      }
+    ],
+    "productsCollections": [
+      {
+        "label": "Product suite",
+        "products": [
+          {
+            "label": "Parlour Care",
+            "icon": "https://res.cloudinary.com/parlour-development/image/upload/v1658739273/logos/parlourcareplus1_ou2u4k.png",
+            "smallIcon": true,
+            "href": "/care",
+            "description": "Never disappoint your customers again. Automatically scan your app for problems and have our team fix them for you.\n\n*   Improve SEO\n*   Scan for vulnerabilities\n*   Have your bugs fixed for you\n"
+          }
+        ]
       },
       {
-        "href": "parlourCare",
-        "label": "Parlour Care"
+        "label": "Services",
+        "products": [
+          {
+            "label": "Blockchain Development",
+            "icon": "https://res.cloudinary.com/parlour-development/image/upload/v1655748679/dapp_hcwmew.webp",
+            "href": "/projects",
+            "description": "Build your app with support from our team. With over 10 happy clients, we have the expertise to bring your ideas to life.\n"
+          },
+          {
+            "label": "Auditing",
+            "icon": "https://res.cloudinary.com/parlour-development/image/upload/v1658741043/cloud-lock-4065319-3361351_hugcz7.png",
+            "href": "/auditing",
+            "description": "Opportunity makes the thief. Secure your software with our help, without performance penalties.\n"
+          }
+        ]
       }
     ]
   },

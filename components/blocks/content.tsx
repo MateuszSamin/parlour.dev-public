@@ -7,7 +7,10 @@ import type { TinaTemplate } from "tinacms";
 export const Content = ({ data, parentField = "" }) => {
   return (
     <Section className="py-0">
-      <Container className="prose !max-w-6xl" size="custom">
+      <Container
+        className={`prose ${data.large ? "prose-xl" : ""} !max-w-6xl`}
+        size="custom"
+      >
         <div className="max-w-3xl">
           <TinaMarkdown content={data.body} />
         </div>
@@ -30,6 +33,11 @@ export const contentBlockSchema: TinaTemplate = {
       type: "rich-text",
       label: "Body",
       name: "body",
+    },
+    {
+      type: "boolean",
+      label: "Large",
+      name: "large",
     },
     {
       type: "string",

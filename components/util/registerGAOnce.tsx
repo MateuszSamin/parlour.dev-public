@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect } from "react";
 import ReactGA from "react-ga4";
 import { UaEventOptions } from "react-ga4/types/ga4";
 
@@ -7,8 +7,8 @@ import { UaEventOptions } from "react-ga4/types/ga4";
  * Originally used to track impressions of 'thank you' pages.
  */
 export const RegisterGAOnce = (props: UaEventOptions) => {
-    useEffect(() => {
-        ReactGA.event(props)
-    }, [])
-    return <></>
-}
+  useEffect(() => {
+    ReactGA.event(props);
+  }, []);
+  return <></>;
+};
