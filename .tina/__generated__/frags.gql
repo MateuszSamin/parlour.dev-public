@@ -186,5 +186,49 @@ fragment PageParts on Page {
     ... on PageBlocksPadding {
       height
     }
+    ... on PageBlocksPlanComparison {
+      analytic {
+        __typename
+        label
+      }
+      careplus {
+        __typename
+        label
+      }
+      perf {
+        __typename
+        label
+      }
+    }
+    ... on PageBlocksNumbers {
+      activeCustomers {
+        __typename
+        label
+      }
+      daysPerYear {
+        __typename
+        label
+      }
+      instantlyFixedCrashes {
+        __typename
+        label
+      }
+    }
+    ... on PageBlocksCareHero {
+      title1 {
+        __typename
+        label
+      }
+      title2 {
+        __typename
+        label
+      }
+    }
+    ... on PageBlocksPlanComparisonTable {
+      option {
+        __typename
+        label
+      }
+    }
   }
 }

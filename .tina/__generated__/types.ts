@@ -495,7 +495,77 @@ export type PageBlocksPadding = {
   height?: Maybe<Scalars['String']>;
 };
 
-export type PageBlocks = PageBlocksHero | PageBlocksFeatures | PageBlocksContent | PageBlocksTestimonial | PageBlocksReasons | PageBlocksClientsRoll | PageBlocksContentStack | PageBlocksConsultation | PageBlocksFaq | PageBlocksSoftware | PageBlocksNewsletter | PageBlocksProject | PageBlocksMinorHero | PageBlocksPadding;
+export type PageBlocksPlanComparisonAnalytic = {
+  __typename?: 'PageBlocksPlanComparisonAnalytic';
+  label?: Maybe<Scalars['String']>;
+};
+
+export type PageBlocksPlanComparisonCareplus = {
+  __typename?: 'PageBlocksPlanComparisonCareplus';
+  label?: Maybe<Scalars['String']>;
+};
+
+export type PageBlocksPlanComparisonPerf = {
+  __typename?: 'PageBlocksPlanComparisonPerf';
+  label?: Maybe<Scalars['String']>;
+};
+
+export type PageBlocksPlanComparison = {
+  __typename?: 'PageBlocksPlanComparison';
+  analytic?: Maybe<Array<Maybe<PageBlocksPlanComparisonAnalytic>>>;
+  careplus?: Maybe<Array<Maybe<PageBlocksPlanComparisonCareplus>>>;
+  perf?: Maybe<Array<Maybe<PageBlocksPlanComparisonPerf>>>;
+};
+
+export type PageBlocksNumbersActiveCustomers = {
+  __typename?: 'PageBlocksNumbersActiveCustomers';
+  label?: Maybe<Scalars['String']>;
+};
+
+export type PageBlocksNumbersDaysPerYear = {
+  __typename?: 'PageBlocksNumbersDaysPerYear';
+  label?: Maybe<Scalars['String']>;
+};
+
+export type PageBlocksNumbersInstantlyFixedCrashes = {
+  __typename?: 'PageBlocksNumbersInstantlyFixedCrashes';
+  label?: Maybe<Scalars['String']>;
+};
+
+export type PageBlocksNumbers = {
+  __typename?: 'PageBlocksNumbers';
+  activeCustomers?: Maybe<Array<Maybe<PageBlocksNumbersActiveCustomers>>>;
+  daysPerYear?: Maybe<Array<Maybe<PageBlocksNumbersDaysPerYear>>>;
+  instantlyFixedCrashes?: Maybe<Array<Maybe<PageBlocksNumbersInstantlyFixedCrashes>>>;
+};
+
+export type PageBlocksCareHeroTitle1 = {
+  __typename?: 'PageBlocksCareHeroTitle1';
+  label?: Maybe<Scalars['String']>;
+};
+
+export type PageBlocksCareHeroTitle2 = {
+  __typename?: 'PageBlocksCareHeroTitle2';
+  label?: Maybe<Scalars['String']>;
+};
+
+export type PageBlocksCareHero = {
+  __typename?: 'PageBlocksCareHero';
+  title1?: Maybe<Array<Maybe<PageBlocksCareHeroTitle1>>>;
+  title2?: Maybe<Array<Maybe<PageBlocksCareHeroTitle2>>>;
+};
+
+export type PageBlocksPlanComparisonTableOption = {
+  __typename?: 'PageBlocksPlanComparisonTableOption';
+  label?: Maybe<Scalars['String']>;
+};
+
+export type PageBlocksPlanComparisonTable = {
+  __typename?: 'PageBlocksPlanComparisonTable';
+  option?: Maybe<Array<Maybe<PageBlocksPlanComparisonTableOption>>>;
+};
+
+export type PageBlocks = PageBlocksHero | PageBlocksFeatures | PageBlocksContent | PageBlocksTestimonial | PageBlocksReasons | PageBlocksClientsRoll | PageBlocksContentStack | PageBlocksConsultation | PageBlocksFaq | PageBlocksSoftware | PageBlocksNewsletter | PageBlocksProject | PageBlocksMinorHero | PageBlocksPadding | PageBlocksPlanComparison | PageBlocksNumbers | PageBlocksCareHero | PageBlocksPlanComparisonTable;
 
 export type Page = Node & Document & {
   __typename?: 'Page';
@@ -829,6 +899,63 @@ export type PageBlocksPaddingMutation = {
   height?: InputMaybe<Scalars['String']>;
 };
 
+export type PageBlocksPlanComparisonAnalyticMutation = {
+  label?: InputMaybe<Scalars['String']>;
+};
+
+export type PageBlocksPlanComparisonCareplusMutation = {
+  label?: InputMaybe<Scalars['String']>;
+};
+
+export type PageBlocksPlanComparisonPerfMutation = {
+  label?: InputMaybe<Scalars['String']>;
+};
+
+export type PageBlocksPlanComparisonMutation = {
+  analytic?: InputMaybe<Array<InputMaybe<PageBlocksPlanComparisonAnalyticMutation>>>;
+  careplus?: InputMaybe<Array<InputMaybe<PageBlocksPlanComparisonCareplusMutation>>>;
+  perf?: InputMaybe<Array<InputMaybe<PageBlocksPlanComparisonPerfMutation>>>;
+};
+
+export type PageBlocksNumbersActiveCustomersMutation = {
+  label?: InputMaybe<Scalars['String']>;
+};
+
+export type PageBlocksNumbersDaysPerYearMutation = {
+  label?: InputMaybe<Scalars['String']>;
+};
+
+export type PageBlocksNumbersInstantlyFixedCrashesMutation = {
+  label?: InputMaybe<Scalars['String']>;
+};
+
+export type PageBlocksNumbersMutation = {
+  activeCustomers?: InputMaybe<Array<InputMaybe<PageBlocksNumbersActiveCustomersMutation>>>;
+  daysPerYear?: InputMaybe<Array<InputMaybe<PageBlocksNumbersDaysPerYearMutation>>>;
+  instantlyFixedCrashes?: InputMaybe<Array<InputMaybe<PageBlocksNumbersInstantlyFixedCrashesMutation>>>;
+};
+
+export type PageBlocksCareHeroTitle1Mutation = {
+  label?: InputMaybe<Scalars['String']>;
+};
+
+export type PageBlocksCareHeroTitle2Mutation = {
+  label?: InputMaybe<Scalars['String']>;
+};
+
+export type PageBlocksCareHeroMutation = {
+  title1?: InputMaybe<Array<InputMaybe<PageBlocksCareHeroTitle1Mutation>>>;
+  title2?: InputMaybe<Array<InputMaybe<PageBlocksCareHeroTitle2Mutation>>>;
+};
+
+export type PageBlocksPlanComparisonTableOptionMutation = {
+  label?: InputMaybe<Scalars['String']>;
+};
+
+export type PageBlocksPlanComparisonTableMutation = {
+  option?: InputMaybe<Array<InputMaybe<PageBlocksPlanComparisonTableOptionMutation>>>;
+};
+
 export type PageBlocksMutation = {
   hero?: InputMaybe<PageBlocksHeroMutation>;
   features?: InputMaybe<PageBlocksFeaturesMutation>;
@@ -844,6 +971,10 @@ export type PageBlocksMutation = {
   project?: InputMaybe<PageBlocksProjectMutation>;
   minorHero?: InputMaybe<PageBlocksMinorHeroMutation>;
   padding?: InputMaybe<PageBlocksPaddingMutation>;
+  planComparison?: InputMaybe<PageBlocksPlanComparisonMutation>;
+  numbers?: InputMaybe<PageBlocksNumbersMutation>;
+  careHero?: InputMaybe<PageBlocksCareHeroMutation>;
+  planComparisonTable?: InputMaybe<PageBlocksPlanComparisonTableMutation>;
 };
 
 export type PageMutation = {
@@ -862,7 +993,7 @@ export type ContentQueryQueryVariables = Exact<{
 }>;
 
 
-export type ContentQueryQuery = { __typename?: 'Query', page: { __typename?: 'Page', blocks?: Array<{ __typename: 'PageBlocksHero', text?: any | null, cta?: { __typename: 'PageBlocksHeroCta', href?: string | null, text?: string | null } | null, image?: { __typename: 'PageBlocksHeroImage', src?: string | null, alt?: string | null } | null } | { __typename: 'PageBlocksFeatures', heading?: any | null, color?: string | null, items?: Array<{ __typename: 'PageBlocksFeaturesItems', image?: string | null, title?: string | null, text?: string | null } | null> | null } | { __typename: 'PageBlocksContent', body?: any | null, large?: boolean | null, color?: string | null } | { __typename: 'PageBlocksTestimonial', heading?: any | null, testimonials?: Array<{ __typename: 'PageBlocksTestimonialTestimonials', name?: string | null, title?: string | null, image?: string | null, reference?: any | null } | null> | null } | { __typename: 'PageBlocksReasons', heading?: any | null, monochrome?: boolean | null, items?: Array<{ __typename: 'PageBlocksReasonsItems', image?: string | null, title?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksClientsRoll', items?: Array<{ __typename: 'PageBlocksClientsRollItems', image?: string | null, alt?: string | null, maxHeight?: string | null } | null> | null } | { __typename: 'PageBlocksContentStack', heading?: any | null, items?: Array<{ __typename: 'PageBlocksContentStackItems', image?: string | null, title?: string | null, description?: any | null } | null> | null } | { __typename: 'PageBlocksConsultation', heading?: any | null, text?: any | null, ctatext?: string | null, subscription_type?: string | null } | { __typename: 'PageBlocksFaq', heading?: any | null, questions?: Array<{ __typename: 'PageBlocksFaqQuestions', question?: string | null, answer?: any | null } | null> | null } | { __typename: 'PageBlocksSoftware', heading?: any | null, software?: Array<{ __typename: 'PageBlocksSoftwareSoftware', name?: string | null, tagline?: string | null, description?: any | null, image?: string | null, image2?: string | null, from?: string | null, to?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksNewsletter', buttonText?: string | null } | { __typename: 'PageBlocksProject', name?: string | null, tagline?: string | null, description?: any | null, built?: any | null, stack?: string | null, from?: string | null, to?: string | null, pictures?: Array<{ __typename: 'PageBlocksProjectPictures', image?: string | null } | null> | null } | { __typename: 'PageBlocksMinorHero', heading?: any | null, text?: any | null, picture?: string | null, compact?: boolean | null, reverse?: boolean | null, from?: string | null, to?: string | null } | { __typename: 'PageBlocksPadding', height?: string | null } | null> | null }, global: { __typename?: 'Global', header?: { __typename: 'GlobalHeader', color?: string | null, icon?: { __typename: 'GlobalHeaderIcon', color?: string | null, style?: string | null, name?: string | null } | null, nav?: Array<{ __typename: 'GlobalHeaderNav', href?: string | null, label?: string | null } | null> | null, productsCollections?: Array<{ __typename: 'GlobalHeaderProductsCollections', label?: string | null, products?: Array<{ __typename: 'GlobalHeaderProductsCollectionsProducts', label?: string | null, icon?: string | null, smallIcon?: boolean | null, href?: string | null, description?: any | null } | null> | null } | null> | null } | null, footer?: { __typename: 'GlobalFooter', color?: string | null, services?: Array<{ __typename: 'GlobalFooterServices', name?: string | null, href?: string | null } | null> | null } | null, theme?: { __typename: 'GlobalTheme', color?: string | null, font?: string | null, icon?: string | null, darkMode?: string | null } | null } };
+export type ContentQueryQuery = { __typename?: 'Query', page: { __typename?: 'Page', blocks?: Array<{ __typename: 'PageBlocksHero', text?: any | null, cta?: { __typename: 'PageBlocksHeroCta', href?: string | null, text?: string | null } | null, image?: { __typename: 'PageBlocksHeroImage', src?: string | null, alt?: string | null } | null } | { __typename: 'PageBlocksFeatures', heading?: any | null, color?: string | null, items?: Array<{ __typename: 'PageBlocksFeaturesItems', image?: string | null, title?: string | null, text?: string | null } | null> | null } | { __typename: 'PageBlocksContent', body?: any | null, large?: boolean | null, color?: string | null } | { __typename: 'PageBlocksTestimonial', heading?: any | null, testimonials?: Array<{ __typename: 'PageBlocksTestimonialTestimonials', name?: string | null, title?: string | null, image?: string | null, reference?: any | null } | null> | null } | { __typename: 'PageBlocksReasons', heading?: any | null, monochrome?: boolean | null, items?: Array<{ __typename: 'PageBlocksReasonsItems', image?: string | null, title?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksClientsRoll', items?: Array<{ __typename: 'PageBlocksClientsRollItems', image?: string | null, alt?: string | null, maxHeight?: string | null } | null> | null } | { __typename: 'PageBlocksContentStack', heading?: any | null, items?: Array<{ __typename: 'PageBlocksContentStackItems', image?: string | null, title?: string | null, description?: any | null } | null> | null } | { __typename: 'PageBlocksConsultation', heading?: any | null, text?: any | null, ctatext?: string | null, subscription_type?: string | null } | { __typename: 'PageBlocksFaq', heading?: any | null, questions?: Array<{ __typename: 'PageBlocksFaqQuestions', question?: string | null, answer?: any | null } | null> | null } | { __typename: 'PageBlocksSoftware', heading?: any | null, software?: Array<{ __typename: 'PageBlocksSoftwareSoftware', name?: string | null, tagline?: string | null, description?: any | null, image?: string | null, image2?: string | null, from?: string | null, to?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksNewsletter', buttonText?: string | null } | { __typename: 'PageBlocksProject', name?: string | null, tagline?: string | null, description?: any | null, built?: any | null, stack?: string | null, from?: string | null, to?: string | null, pictures?: Array<{ __typename: 'PageBlocksProjectPictures', image?: string | null } | null> | null } | { __typename: 'PageBlocksMinorHero', heading?: any | null, text?: any | null, picture?: string | null, compact?: boolean | null, reverse?: boolean | null, from?: string | null, to?: string | null } | { __typename: 'PageBlocksPadding', height?: string | null } | { __typename: 'PageBlocksPlanComparison', analytic?: Array<{ __typename: 'PageBlocksPlanComparisonAnalytic', label?: string | null } | null> | null, careplus?: Array<{ __typename: 'PageBlocksPlanComparisonCareplus', label?: string | null } | null> | null, perf?: Array<{ __typename: 'PageBlocksPlanComparisonPerf', label?: string | null } | null> | null } | { __typename: 'PageBlocksNumbers', activeCustomers?: Array<{ __typename: 'PageBlocksNumbersActiveCustomers', label?: string | null } | null> | null, daysPerYear?: Array<{ __typename: 'PageBlocksNumbersDaysPerYear', label?: string | null } | null> | null, instantlyFixedCrashes?: Array<{ __typename: 'PageBlocksNumbersInstantlyFixedCrashes', label?: string | null } | null> | null } | { __typename: 'PageBlocksCareHero', title1?: Array<{ __typename: 'PageBlocksCareHeroTitle1', label?: string | null } | null> | null, title2?: Array<{ __typename: 'PageBlocksCareHeroTitle2', label?: string | null } | null> | null } | { __typename: 'PageBlocksPlanComparisonTable', option?: Array<{ __typename: 'PageBlocksPlanComparisonTableOption', label?: string | null } | null> | null } | null> | null }, global: { __typename?: 'Global', header?: { __typename: 'GlobalHeader', color?: string | null, icon?: { __typename: 'GlobalHeaderIcon', color?: string | null, style?: string | null, name?: string | null } | null, nav?: Array<{ __typename: 'GlobalHeaderNav', href?: string | null, label?: string | null } | null> | null, productsCollections?: Array<{ __typename: 'GlobalHeaderProductsCollections', label?: string | null, products?: Array<{ __typename: 'GlobalHeaderProductsCollectionsProducts', label?: string | null, icon?: string | null, smallIcon?: boolean | null, href?: string | null, description?: any | null } | null> | null } | null> | null } | null, footer?: { __typename: 'GlobalFooter', color?: string | null, services?: Array<{ __typename: 'GlobalFooterServices', name?: string | null, href?: string | null } | null> | null } | null, theme?: { __typename: 'GlobalTheme', color?: string | null, font?: string | null, icon?: string | null, darkMode?: string | null } | null } };
 
 export type BlogPostQueryQueryVariables = Exact<{
   relativePath: Scalars['String'];
@@ -877,7 +1008,7 @@ export type GlobalPartsFragment = { __typename?: 'Global', header?: { __typename
 
 export type AuthorPartsFragment = { __typename?: 'Author', name?: string | null, avatar?: string | null };
 
-export type PagePartsFragment = { __typename?: 'Page', blocks?: Array<{ __typename: 'PageBlocksHero', text?: any | null, cta?: { __typename: 'PageBlocksHeroCta', href?: string | null, text?: string | null } | null, image?: { __typename: 'PageBlocksHeroImage', src?: string | null, alt?: string | null } | null } | { __typename: 'PageBlocksFeatures', heading?: any | null, color?: string | null, items?: Array<{ __typename: 'PageBlocksFeaturesItems', image?: string | null, title?: string | null, text?: string | null } | null> | null } | { __typename: 'PageBlocksContent', body?: any | null, large?: boolean | null, color?: string | null } | { __typename: 'PageBlocksTestimonial', heading?: any | null, testimonials?: Array<{ __typename: 'PageBlocksTestimonialTestimonials', name?: string | null, title?: string | null, image?: string | null, reference?: any | null } | null> | null } | { __typename: 'PageBlocksReasons', heading?: any | null, monochrome?: boolean | null, items?: Array<{ __typename: 'PageBlocksReasonsItems', image?: string | null, title?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksClientsRoll', items?: Array<{ __typename: 'PageBlocksClientsRollItems', image?: string | null, alt?: string | null, maxHeight?: string | null } | null> | null } | { __typename: 'PageBlocksContentStack', heading?: any | null, items?: Array<{ __typename: 'PageBlocksContentStackItems', image?: string | null, title?: string | null, description?: any | null } | null> | null } | { __typename: 'PageBlocksConsultation', heading?: any | null, text?: any | null, ctatext?: string | null, subscription_type?: string | null } | { __typename: 'PageBlocksFaq', heading?: any | null, questions?: Array<{ __typename: 'PageBlocksFaqQuestions', question?: string | null, answer?: any | null } | null> | null } | { __typename: 'PageBlocksSoftware', heading?: any | null, software?: Array<{ __typename: 'PageBlocksSoftwareSoftware', name?: string | null, tagline?: string | null, description?: any | null, image?: string | null, image2?: string | null, from?: string | null, to?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksNewsletter', buttonText?: string | null } | { __typename: 'PageBlocksProject', name?: string | null, tagline?: string | null, description?: any | null, built?: any | null, stack?: string | null, from?: string | null, to?: string | null, pictures?: Array<{ __typename: 'PageBlocksProjectPictures', image?: string | null } | null> | null } | { __typename: 'PageBlocksMinorHero', heading?: any | null, text?: any | null, picture?: string | null, compact?: boolean | null, reverse?: boolean | null, from?: string | null, to?: string | null } | { __typename: 'PageBlocksPadding', height?: string | null } | null> | null };
+export type PagePartsFragment = { __typename?: 'Page', blocks?: Array<{ __typename: 'PageBlocksHero', text?: any | null, cta?: { __typename: 'PageBlocksHeroCta', href?: string | null, text?: string | null } | null, image?: { __typename: 'PageBlocksHeroImage', src?: string | null, alt?: string | null } | null } | { __typename: 'PageBlocksFeatures', heading?: any | null, color?: string | null, items?: Array<{ __typename: 'PageBlocksFeaturesItems', image?: string | null, title?: string | null, text?: string | null } | null> | null } | { __typename: 'PageBlocksContent', body?: any | null, large?: boolean | null, color?: string | null } | { __typename: 'PageBlocksTestimonial', heading?: any | null, testimonials?: Array<{ __typename: 'PageBlocksTestimonialTestimonials', name?: string | null, title?: string | null, image?: string | null, reference?: any | null } | null> | null } | { __typename: 'PageBlocksReasons', heading?: any | null, monochrome?: boolean | null, items?: Array<{ __typename: 'PageBlocksReasonsItems', image?: string | null, title?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksClientsRoll', items?: Array<{ __typename: 'PageBlocksClientsRollItems', image?: string | null, alt?: string | null, maxHeight?: string | null } | null> | null } | { __typename: 'PageBlocksContentStack', heading?: any | null, items?: Array<{ __typename: 'PageBlocksContentStackItems', image?: string | null, title?: string | null, description?: any | null } | null> | null } | { __typename: 'PageBlocksConsultation', heading?: any | null, text?: any | null, ctatext?: string | null, subscription_type?: string | null } | { __typename: 'PageBlocksFaq', heading?: any | null, questions?: Array<{ __typename: 'PageBlocksFaqQuestions', question?: string | null, answer?: any | null } | null> | null } | { __typename: 'PageBlocksSoftware', heading?: any | null, software?: Array<{ __typename: 'PageBlocksSoftwareSoftware', name?: string | null, tagline?: string | null, description?: any | null, image?: string | null, image2?: string | null, from?: string | null, to?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksNewsletter', buttonText?: string | null } | { __typename: 'PageBlocksProject', name?: string | null, tagline?: string | null, description?: any | null, built?: any | null, stack?: string | null, from?: string | null, to?: string | null, pictures?: Array<{ __typename: 'PageBlocksProjectPictures', image?: string | null } | null> | null } | { __typename: 'PageBlocksMinorHero', heading?: any | null, text?: any | null, picture?: string | null, compact?: boolean | null, reverse?: boolean | null, from?: string | null, to?: string | null } | { __typename: 'PageBlocksPadding', height?: string | null } | { __typename: 'PageBlocksPlanComparison', analytic?: Array<{ __typename: 'PageBlocksPlanComparisonAnalytic', label?: string | null } | null> | null, careplus?: Array<{ __typename: 'PageBlocksPlanComparisonCareplus', label?: string | null } | null> | null, perf?: Array<{ __typename: 'PageBlocksPlanComparisonPerf', label?: string | null } | null> | null } | { __typename: 'PageBlocksNumbers', activeCustomers?: Array<{ __typename: 'PageBlocksNumbersActiveCustomers', label?: string | null } | null> | null, daysPerYear?: Array<{ __typename: 'PageBlocksNumbersDaysPerYear', label?: string | null } | null> | null, instantlyFixedCrashes?: Array<{ __typename: 'PageBlocksNumbersInstantlyFixedCrashes', label?: string | null } | null> | null } | { __typename: 'PageBlocksCareHero', title1?: Array<{ __typename: 'PageBlocksCareHeroTitle1', label?: string | null } | null> | null, title2?: Array<{ __typename: 'PageBlocksCareHeroTitle2', label?: string | null } | null> | null } | { __typename: 'PageBlocksPlanComparisonTable', option?: Array<{ __typename: 'PageBlocksPlanComparisonTableOption', label?: string | null } | null> | null } | null> | null };
 
 export type PostQueryVariables = Exact<{
   relativePath: Scalars['String'];
@@ -938,7 +1069,7 @@ export type PageQueryVariables = Exact<{
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', page: { __typename?: 'Page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'PageBlocksHero', text?: any | null, cta?: { __typename: 'PageBlocksHeroCta', href?: string | null, text?: string | null } | null, image?: { __typename: 'PageBlocksHeroImage', src?: string | null, alt?: string | null } | null } | { __typename: 'PageBlocksFeatures', heading?: any | null, color?: string | null, items?: Array<{ __typename: 'PageBlocksFeaturesItems', image?: string | null, title?: string | null, text?: string | null } | null> | null } | { __typename: 'PageBlocksContent', body?: any | null, large?: boolean | null, color?: string | null } | { __typename: 'PageBlocksTestimonial', heading?: any | null, testimonials?: Array<{ __typename: 'PageBlocksTestimonialTestimonials', name?: string | null, title?: string | null, image?: string | null, reference?: any | null } | null> | null } | { __typename: 'PageBlocksReasons', heading?: any | null, monochrome?: boolean | null, items?: Array<{ __typename: 'PageBlocksReasonsItems', image?: string | null, title?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksClientsRoll', items?: Array<{ __typename: 'PageBlocksClientsRollItems', image?: string | null, alt?: string | null, maxHeight?: string | null } | null> | null } | { __typename: 'PageBlocksContentStack', heading?: any | null, items?: Array<{ __typename: 'PageBlocksContentStackItems', image?: string | null, title?: string | null, description?: any | null } | null> | null } | { __typename: 'PageBlocksConsultation', heading?: any | null, text?: any | null, ctatext?: string | null, subscription_type?: string | null } | { __typename: 'PageBlocksFaq', heading?: any | null, questions?: Array<{ __typename: 'PageBlocksFaqQuestions', question?: string | null, answer?: any | null } | null> | null } | { __typename: 'PageBlocksSoftware', heading?: any | null, software?: Array<{ __typename: 'PageBlocksSoftwareSoftware', name?: string | null, tagline?: string | null, description?: any | null, image?: string | null, image2?: string | null, from?: string | null, to?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksNewsletter', buttonText?: string | null } | { __typename: 'PageBlocksProject', name?: string | null, tagline?: string | null, description?: any | null, built?: any | null, stack?: string | null, from?: string | null, to?: string | null, pictures?: Array<{ __typename: 'PageBlocksProjectPictures', image?: string | null } | null> | null } | { __typename: 'PageBlocksMinorHero', heading?: any | null, text?: any | null, picture?: string | null, compact?: boolean | null, reverse?: boolean | null, from?: string | null, to?: string | null } | { __typename: 'PageBlocksPadding', height?: string | null } | null> | null } };
+export type PageQuery = { __typename?: 'Query', page: { __typename?: 'Page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'PageBlocksHero', text?: any | null, cta?: { __typename: 'PageBlocksHeroCta', href?: string | null, text?: string | null } | null, image?: { __typename: 'PageBlocksHeroImage', src?: string | null, alt?: string | null } | null } | { __typename: 'PageBlocksFeatures', heading?: any | null, color?: string | null, items?: Array<{ __typename: 'PageBlocksFeaturesItems', image?: string | null, title?: string | null, text?: string | null } | null> | null } | { __typename: 'PageBlocksContent', body?: any | null, large?: boolean | null, color?: string | null } | { __typename: 'PageBlocksTestimonial', heading?: any | null, testimonials?: Array<{ __typename: 'PageBlocksTestimonialTestimonials', name?: string | null, title?: string | null, image?: string | null, reference?: any | null } | null> | null } | { __typename: 'PageBlocksReasons', heading?: any | null, monochrome?: boolean | null, items?: Array<{ __typename: 'PageBlocksReasonsItems', image?: string | null, title?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksClientsRoll', items?: Array<{ __typename: 'PageBlocksClientsRollItems', image?: string | null, alt?: string | null, maxHeight?: string | null } | null> | null } | { __typename: 'PageBlocksContentStack', heading?: any | null, items?: Array<{ __typename: 'PageBlocksContentStackItems', image?: string | null, title?: string | null, description?: any | null } | null> | null } | { __typename: 'PageBlocksConsultation', heading?: any | null, text?: any | null, ctatext?: string | null, subscription_type?: string | null } | { __typename: 'PageBlocksFaq', heading?: any | null, questions?: Array<{ __typename: 'PageBlocksFaqQuestions', question?: string | null, answer?: any | null } | null> | null } | { __typename: 'PageBlocksSoftware', heading?: any | null, software?: Array<{ __typename: 'PageBlocksSoftwareSoftware', name?: string | null, tagline?: string | null, description?: any | null, image?: string | null, image2?: string | null, from?: string | null, to?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksNewsletter', buttonText?: string | null } | { __typename: 'PageBlocksProject', name?: string | null, tagline?: string | null, description?: any | null, built?: any | null, stack?: string | null, from?: string | null, to?: string | null, pictures?: Array<{ __typename: 'PageBlocksProjectPictures', image?: string | null } | null> | null } | { __typename: 'PageBlocksMinorHero', heading?: any | null, text?: any | null, picture?: string | null, compact?: boolean | null, reverse?: boolean | null, from?: string | null, to?: string | null } | { __typename: 'PageBlocksPadding', height?: string | null } | { __typename: 'PageBlocksPlanComparison', analytic?: Array<{ __typename: 'PageBlocksPlanComparisonAnalytic', label?: string | null } | null> | null, careplus?: Array<{ __typename: 'PageBlocksPlanComparisonCareplus', label?: string | null } | null> | null, perf?: Array<{ __typename: 'PageBlocksPlanComparisonPerf', label?: string | null } | null> | null } | { __typename: 'PageBlocksNumbers', activeCustomers?: Array<{ __typename: 'PageBlocksNumbersActiveCustomers', label?: string | null } | null> | null, daysPerYear?: Array<{ __typename: 'PageBlocksNumbersDaysPerYear', label?: string | null } | null> | null, instantlyFixedCrashes?: Array<{ __typename: 'PageBlocksNumbersInstantlyFixedCrashes', label?: string | null } | null> | null } | { __typename: 'PageBlocksCareHero', title1?: Array<{ __typename: 'PageBlocksCareHeroTitle1', label?: string | null } | null> | null, title2?: Array<{ __typename: 'PageBlocksCareHeroTitle2', label?: string | null } | null> | null } | { __typename: 'PageBlocksPlanComparisonTable', option?: Array<{ __typename: 'PageBlocksPlanComparisonTableOption', label?: string | null } | null> | null } | null> | null } };
 
 export type PageConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']>;
@@ -949,7 +1080,7 @@ export type PageConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, edges?: Array<{ __typename?: 'PageConnectionEdges', node?: { __typename?: 'Page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'PageBlocksHero', text?: any | null, cta?: { __typename: 'PageBlocksHeroCta', href?: string | null, text?: string | null } | null, image?: { __typename: 'PageBlocksHeroImage', src?: string | null, alt?: string | null } | null } | { __typename: 'PageBlocksFeatures', heading?: any | null, color?: string | null, items?: Array<{ __typename: 'PageBlocksFeaturesItems', image?: string | null, title?: string | null, text?: string | null } | null> | null } | { __typename: 'PageBlocksContent', body?: any | null, large?: boolean | null, color?: string | null } | { __typename: 'PageBlocksTestimonial', heading?: any | null, testimonials?: Array<{ __typename: 'PageBlocksTestimonialTestimonials', name?: string | null, title?: string | null, image?: string | null, reference?: any | null } | null> | null } | { __typename: 'PageBlocksReasons', heading?: any | null, monochrome?: boolean | null, items?: Array<{ __typename: 'PageBlocksReasonsItems', image?: string | null, title?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksClientsRoll', items?: Array<{ __typename: 'PageBlocksClientsRollItems', image?: string | null, alt?: string | null, maxHeight?: string | null } | null> | null } | { __typename: 'PageBlocksContentStack', heading?: any | null, items?: Array<{ __typename: 'PageBlocksContentStackItems', image?: string | null, title?: string | null, description?: any | null } | null> | null } | { __typename: 'PageBlocksConsultation', heading?: any | null, text?: any | null, ctatext?: string | null, subscription_type?: string | null } | { __typename: 'PageBlocksFaq', heading?: any | null, questions?: Array<{ __typename: 'PageBlocksFaqQuestions', question?: string | null, answer?: any | null } | null> | null } | { __typename: 'PageBlocksSoftware', heading?: any | null, software?: Array<{ __typename: 'PageBlocksSoftwareSoftware', name?: string | null, tagline?: string | null, description?: any | null, image?: string | null, image2?: string | null, from?: string | null, to?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksNewsletter', buttonText?: string | null } | { __typename: 'PageBlocksProject', name?: string | null, tagline?: string | null, description?: any | null, built?: any | null, stack?: string | null, from?: string | null, to?: string | null, pictures?: Array<{ __typename: 'PageBlocksProjectPictures', image?: string | null } | null> | null } | { __typename: 'PageBlocksMinorHero', heading?: any | null, text?: any | null, picture?: string | null, compact?: boolean | null, reverse?: boolean | null, from?: string | null, to?: string | null } | { __typename: 'PageBlocksPadding', height?: string | null } | null> | null } | null } | null> | null } };
+export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, edges?: Array<{ __typename?: 'PageConnectionEdges', node?: { __typename?: 'Page', id: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'PageBlocksHero', text?: any | null, cta?: { __typename: 'PageBlocksHeroCta', href?: string | null, text?: string | null } | null, image?: { __typename: 'PageBlocksHeroImage', src?: string | null, alt?: string | null } | null } | { __typename: 'PageBlocksFeatures', heading?: any | null, color?: string | null, items?: Array<{ __typename: 'PageBlocksFeaturesItems', image?: string | null, title?: string | null, text?: string | null } | null> | null } | { __typename: 'PageBlocksContent', body?: any | null, large?: boolean | null, color?: string | null } | { __typename: 'PageBlocksTestimonial', heading?: any | null, testimonials?: Array<{ __typename: 'PageBlocksTestimonialTestimonials', name?: string | null, title?: string | null, image?: string | null, reference?: any | null } | null> | null } | { __typename: 'PageBlocksReasons', heading?: any | null, monochrome?: boolean | null, items?: Array<{ __typename: 'PageBlocksReasonsItems', image?: string | null, title?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksClientsRoll', items?: Array<{ __typename: 'PageBlocksClientsRollItems', image?: string | null, alt?: string | null, maxHeight?: string | null } | null> | null } | { __typename: 'PageBlocksContentStack', heading?: any | null, items?: Array<{ __typename: 'PageBlocksContentStackItems', image?: string | null, title?: string | null, description?: any | null } | null> | null } | { __typename: 'PageBlocksConsultation', heading?: any | null, text?: any | null, ctatext?: string | null, subscription_type?: string | null } | { __typename: 'PageBlocksFaq', heading?: any | null, questions?: Array<{ __typename: 'PageBlocksFaqQuestions', question?: string | null, answer?: any | null } | null> | null } | { __typename: 'PageBlocksSoftware', heading?: any | null, software?: Array<{ __typename: 'PageBlocksSoftwareSoftware', name?: string | null, tagline?: string | null, description?: any | null, image?: string | null, image2?: string | null, from?: string | null, to?: string | null, href?: string | null } | null> | null } | { __typename: 'PageBlocksNewsletter', buttonText?: string | null } | { __typename: 'PageBlocksProject', name?: string | null, tagline?: string | null, description?: any | null, built?: any | null, stack?: string | null, from?: string | null, to?: string | null, pictures?: Array<{ __typename: 'PageBlocksProjectPictures', image?: string | null } | null> | null } | { __typename: 'PageBlocksMinorHero', heading?: any | null, text?: any | null, picture?: string | null, compact?: boolean | null, reverse?: boolean | null, from?: string | null, to?: string | null } | { __typename: 'PageBlocksPadding', height?: string | null } | { __typename: 'PageBlocksPlanComparison', analytic?: Array<{ __typename: 'PageBlocksPlanComparisonAnalytic', label?: string | null } | null> | null, careplus?: Array<{ __typename: 'PageBlocksPlanComparisonCareplus', label?: string | null } | null> | null, perf?: Array<{ __typename: 'PageBlocksPlanComparisonPerf', label?: string | null } | null> | null } | { __typename: 'PageBlocksNumbers', activeCustomers?: Array<{ __typename: 'PageBlocksNumbersActiveCustomers', label?: string | null } | null> | null, daysPerYear?: Array<{ __typename: 'PageBlocksNumbersDaysPerYear', label?: string | null } | null> | null, instantlyFixedCrashes?: Array<{ __typename: 'PageBlocksNumbersInstantlyFixedCrashes', label?: string | null } | null> | null } | { __typename: 'PageBlocksCareHero', title1?: Array<{ __typename: 'PageBlocksCareHeroTitle1', label?: string | null } | null> | null, title2?: Array<{ __typename: 'PageBlocksCareHeroTitle2', label?: string | null } | null> | null } | { __typename: 'PageBlocksPlanComparisonTable', option?: Array<{ __typename: 'PageBlocksPlanComparisonTableOption', label?: string | null } | null> | null } | null> | null } | null } | null> | null } };
 
 export const GlobalPartsFragmentDoc = gql`
     fragment GlobalParts on Global {
@@ -1149,6 +1280,50 @@ export const PagePartsFragmentDoc = gql`
     }
     ... on PageBlocksPadding {
       height
+    }
+    ... on PageBlocksPlanComparison {
+      analytic {
+        __typename
+        label
+      }
+      careplus {
+        __typename
+        label
+      }
+      perf {
+        __typename
+        label
+      }
+    }
+    ... on PageBlocksNumbers {
+      activeCustomers {
+        __typename
+        label
+      }
+      daysPerYear {
+        __typename
+        label
+      }
+      instantlyFixedCrashes {
+        __typename
+        label
+      }
+    }
+    ... on PageBlocksCareHero {
+      title1 {
+        __typename
+        label
+      }
+      title2 {
+        __typename
+        label
+      }
+    }
+    ... on PageBlocksPlanComparisonTable {
+      option {
+        __typename
+        label
+      }
     }
   }
 }

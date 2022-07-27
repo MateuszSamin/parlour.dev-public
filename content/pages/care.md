@@ -2,6 +2,18 @@
 blocks:
   - height: 8rem
     _template: padding
+  - title1: 
+    - label: Fully
+    title2:
+    - label: Covered
+    _template: careHero
+  - activeCustomers:
+      - label: 24
+    daysPerYear:
+      - label: 365
+    instantlyFixedCrashes:
+      - label: 92
+    _template: numbers
   - heading: ''
     items:
       - image: >-
@@ -49,6 +61,35 @@ blocks:
       https://res.cloudinary.com/parlour-development/image/upload/v1658784194/parlourCare/ImprovePerformance_bxaemz.webp
     compact: true
     _template: minorHero
+  - analytic:
+      - label: User action recordings
+      - label: Google Analytics
+      - label: Facebook Pixel
+    careplus:
+      - label: Dedicated support
+      - label: Weekly performance reports
+      - label: Billed monthly lub yearly
+      - label: Analytics
+      - label: User action recordings
+      - label: 8 hours fix time
+      - label: Assigned support engineer
+      - label: 24/7 support
+    perf:
+      - label: Dedicated support
+      - label: Weekly performance reports
+      - label: Billed monthly or yearly
+    _template: planComparison
+  - option:
+    - label: Decidated support
+    - label: Weekly performance reports
+    - label: Weekly analytic reports
+    - label: Billed monthly or yearly
+    - label: Analytics
+    - label: User action recordings
+    - label: 8 hour fix time
+    - label: Decidated support engineer
+    - label: 24/7 support
+    _template: planComparisonTable
   - heading: |
       # **Still unsure?**
     text: |

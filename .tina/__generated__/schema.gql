@@ -340,7 +340,64 @@ type PageBlocksPadding {
   height: String
 }
 
-union PageBlocks = PageBlocksHero | PageBlocksFeatures | PageBlocksContent | PageBlocksTestimonial | PageBlocksReasons | PageBlocksClientsRoll | PageBlocksContentStack | PageBlocksConsultation | PageBlocksFaq | PageBlocksSoftware | PageBlocksNewsletter | PageBlocksProject | PageBlocksMinorHero | PageBlocksPadding
+type PageBlocksPlanComparisonAnalytic {
+  label: String
+}
+
+type PageBlocksPlanComparisonCareplus {
+  label: String
+}
+
+type PageBlocksPlanComparisonPerf {
+  label: String
+}
+
+type PageBlocksPlanComparison {
+  analytic: [PageBlocksPlanComparisonAnalytic]
+  careplus: [PageBlocksPlanComparisonCareplus]
+  perf: [PageBlocksPlanComparisonPerf]
+}
+
+type PageBlocksNumbersActiveCustomers {
+  label: String
+}
+
+type PageBlocksNumbersDaysPerYear {
+  label: String
+}
+
+type PageBlocksNumbersInstantlyFixedCrashes {
+  label: String
+}
+
+type PageBlocksNumbers {
+  activeCustomers: [PageBlocksNumbersActiveCustomers]
+  daysPerYear: [PageBlocksNumbersDaysPerYear]
+  instantlyFixedCrashes: [PageBlocksNumbersInstantlyFixedCrashes]
+}
+
+type PageBlocksCareHeroTitle1 {
+  label: String
+}
+
+type PageBlocksCareHeroTitle2 {
+  label: String
+}
+
+type PageBlocksCareHero {
+  title1: [PageBlocksCareHeroTitle1]
+  title2: [PageBlocksCareHeroTitle2]
+}
+
+type PageBlocksPlanComparisonTableOption {
+  label: String
+}
+
+type PageBlocksPlanComparisonTable {
+  option: [PageBlocksPlanComparisonTableOption]
+}
+
+union PageBlocks = PageBlocksHero | PageBlocksFeatures | PageBlocksContent | PageBlocksTestimonial | PageBlocksReasons | PageBlocksClientsRoll | PageBlocksContentStack | PageBlocksConsultation | PageBlocksFaq | PageBlocksSoftware | PageBlocksNewsletter | PageBlocksProject | PageBlocksMinorHero | PageBlocksPadding | PageBlocksPlanComparison | PageBlocksNumbers | PageBlocksCareHero | PageBlocksPlanComparisonTable
 
 type Page implements Node & Document {
   blocks: [PageBlocks]
@@ -595,6 +652,63 @@ input PageBlocksPaddingMutation {
   height: String
 }
 
+input PageBlocksPlanComparisonAnalyticMutation {
+  label: String
+}
+
+input PageBlocksPlanComparisonCareplusMutation {
+  label: String
+}
+
+input PageBlocksPlanComparisonPerfMutation {
+  label: String
+}
+
+input PageBlocksPlanComparisonMutation {
+  analytic: [PageBlocksPlanComparisonAnalyticMutation]
+  careplus: [PageBlocksPlanComparisonCareplusMutation]
+  perf: [PageBlocksPlanComparisonPerfMutation]
+}
+
+input PageBlocksNumbersActiveCustomersMutation {
+  label: String
+}
+
+input PageBlocksNumbersDaysPerYearMutation {
+  label: String
+}
+
+input PageBlocksNumbersInstantlyFixedCrashesMutation {
+  label: String
+}
+
+input PageBlocksNumbersMutation {
+  activeCustomers: [PageBlocksNumbersActiveCustomersMutation]
+  daysPerYear: [PageBlocksNumbersDaysPerYearMutation]
+  instantlyFixedCrashes: [PageBlocksNumbersInstantlyFixedCrashesMutation]
+}
+
+input PageBlocksCareHeroTitle1Mutation {
+  label: String
+}
+
+input PageBlocksCareHeroTitle2Mutation {
+  label: String
+}
+
+input PageBlocksCareHeroMutation {
+  title1: [PageBlocksCareHeroTitle1Mutation]
+  title2: [PageBlocksCareHeroTitle2Mutation]
+}
+
+input PageBlocksPlanComparisonTableOptionMutation {
+  label: String
+}
+
+input PageBlocksPlanComparisonTableMutation {
+  option: [PageBlocksPlanComparisonTableOptionMutation]
+}
+
 input PageBlocksMutation {
   hero: PageBlocksHeroMutation
   features: PageBlocksFeaturesMutation
@@ -610,6 +724,10 @@ input PageBlocksMutation {
   project: PageBlocksProjectMutation
   minorHero: PageBlocksMinorHeroMutation
   padding: PageBlocksPaddingMutation
+  planComparison: PageBlocksPlanComparisonMutation
+  numbers: PageBlocksNumbersMutation
+  careHero: PageBlocksCareHeroMutation
+  planComparisonTable: PageBlocksPlanComparisonTableMutation
 }
 
 input PageMutation {

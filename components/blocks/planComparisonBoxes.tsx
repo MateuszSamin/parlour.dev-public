@@ -5,14 +5,15 @@ import ParlourCarePlusOutline from "../../public/uploads/parlourcareplusoutline1
 import PerformanceReports from "../../public/uploads/performanceReports.png";
 import AnalyticReports from "../../public/uploads/analyticReports.png";
 import CheckedImg from "../../public/uploads/Vector24.png";
+import { TinaTemplate } from "tinacms";
 
-export const PlanComparisonBoxes = () => {
+export const PlanComparisonBoxes = ({data}) => {
   return (
-    <Section className="bg-parlourDark lg:pb-72 lg:pt-0 pt-32 pb-32 ">
+    <Section className="bg-parlourDark py-24">
       <Container className=" flex flex-col items-center">
         <div className="flex lg:flex-row flex-col items-center justify-center w-[100%] h-[100%] gap-6">
           <div className="rounded-3xl lg:w-[25%] w-[90%] lg:h-[80%]  mt-10 bg-gradient-to-r p-1 from-[#FF630B] to-[#FBC918]">
-            <div className="flex flex-col items-center justify-start pt-10 h-full bg-white rounded-3xl p-4 lg:pb-36 gap-5 text-lg ">
+            <div className="flex flex-col items-center justify-start pt-10 h-full bg-white rounded-3xl p-4 lg:pb-20 gap-5 text-lg ">
               <img src={AnalyticReports.src} className="w-32" />
               <div className="flex lg:flex-row flex-col gap-1">
                 <h3 className="font-bold">Analytic</h3> <h3>Reports</h3>
@@ -22,11 +23,14 @@ export const PlanComparisonBoxes = () => {
                 <PlanComparisonBoxesElement />
                 <PlanComparisonBoxesElement />
                 <PlanComparisonBoxesElement />
+                {data?.analytic?.map((item, key) => (
+                  <PlanComparisonBoxesElement key={key} data={item.label} />
+                ))}
               </div>
             </div>
           </div>
           <div className="rounded-3xl lg:w-[30%] w-[90%] lg:h-[100%]  mt-10 bg-gradient-to-r p-1 from-parlourGreen to-parlourBlue">
-            <div className="flex flex-col items-center justify-start pt-10 h-full bg-white rounded-3xl p-4 lg:pb-44 gap-5 text-xl ">
+            <div className="flex flex-col items-center justify-start pt-10 h-full bg-white rounded-3xl p-4 lg:pb-20 gap-5 text-xl ">
               <img src={ParlourCarePlusOutline.src} className="w-44" />
               <div className="flex lg:flex-row flex-col gap-1">
                 <h3 className="font-bold">Parlour</h3>{" "}
@@ -37,12 +41,15 @@ export const PlanComparisonBoxes = () => {
                 <PlanComparisonBoxesElement />
                 <PlanComparisonBoxesElement />
                 <PlanComparisonBoxesElement />
+                {data?.careplus?.map((item, key) => (
+                  <PlanComparisonBoxesElement key={key} data={item.label} />
+                ))}
               </div>
             </div>
           </div>
           <div className="rounded-3xl lg:w-[25%] w-[90%] lg:h-[80%]  mt-10 bg-gradient-to-r p-1 from-[#2572E0] to-[#03CFFE]">
-            <div className="flex flex-col items-center justify-start pt-10 h-full bg-white rounded-3xl p-4 lg:pb-52 gap-5 text-lg ">
-              <img src={PerformanceReports.src} className="w-32 pb-5" />
+            <div className="flex flex-col items-center justify-start pt-10 h-full bg-white rounded-3xl p-4 lg:pb-20 gap-5 text-lg ">
+              <img src={PerformanceReports.src} className="w-40 pb-5" />
               <div className="flex lg:flex-row flex-col gap-1">
                 <h3 className="font-bold">Performance</h3> <h3>Reports</h3>
               </div>
@@ -50,6 +57,9 @@ export const PlanComparisonBoxes = () => {
                 <PlanComparisonBoxesElement />
                 <PlanComparisonBoxesElement />
                 <PlanComparisonBoxesElement />
+                {data?.perf?.map((item, key) => (
+                  <PlanComparisonBoxesElement key={key} data={item.label} />
+                ))}
               </div>
             </div>
           </div>
@@ -62,9 +72,72 @@ export const PlanComparisonBoxes = () => {
   );
 };
 
-const PlanComparisonBoxesElement = () => (
-  <div className="flex flex-row px-5 items-baseline justify-start text-base">
-    <Image src={CheckedImg} />
-    <p className="pl-2">assasasas</p>
+const PlanComparisonBoxesElement = ({ data = "Great Feature" }) => (
+  <div className="w-full flex flex-row md:px-5 py-2 items-center justify-start text-base">
+    <div className="w-[8%] relative">
+      <Image layout="responsive" src={CheckedImg} />
+    </div>
+    <p className="pl-2 w-[92%] leading-tight">{data}</p>
   </div>
 );
+
+export const planComparisonBoxesSchema: TinaTemplate = {
+  name: "planComparison",
+  label: "Plan Comparison Boxes",
+  fields: [
+    {
+      name: "analytic",
+      type: "object",
+      label: "Analytic Reports",
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: item.label || "Great Feature",
+        }),
+      },
+      fields: [
+        {
+          name: "label",
+          type: "string",
+          label: "Label",
+        },
+      ],
+    },
+    {
+      name: "careplus",
+      type: "object",
+      label: "Parlour Care+",
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: item.label || "Great Feature",
+        }),
+      },
+      fields: [
+        {
+          name: "label",
+          type: "string",
+          label: "Label",
+        },
+      ],
+    },
+    {
+      name: "perf",
+      type: "object",
+      label: "Performance Reports",
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: item.label || "Great Feature",
+        }),
+      },
+      fields: [
+        {
+          name: "label",
+          type: "string",
+          label: "Label",
+        },
+      ],
+    },
+  ],
+};
