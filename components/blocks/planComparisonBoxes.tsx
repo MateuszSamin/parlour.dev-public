@@ -7,7 +7,7 @@ import AnalyticReports from "../../public/uploads/analyticReports.png";
 import CheckedImg from "../../public/uploads/Vector24.png";
 import { TinaTemplate } from "tinacms";
 
-export const PlanComparisonBoxes = ({data}) => {
+export const PlanComparisonBoxes = ({ data }) => {
   return (
     <Section className="bg-parlourDark py-24">
       <Container className=" flex flex-col items-center">
@@ -19,10 +19,6 @@ export const PlanComparisonBoxes = ({data}) => {
                 <h3 className="font-bold">Analytic</h3> <h3>Reports</h3>
               </div>
               <div className="flex flex-col justify-start w-[90%]">
-                <PlanComparisonBoxesElement />
-                <PlanComparisonBoxesElement />
-                <PlanComparisonBoxesElement />
-                <PlanComparisonBoxesElement />
                 {data?.analytic?.map((item, key) => (
                   <PlanComparisonBoxesElement key={key} data={item.label} />
                 ))}
@@ -37,10 +33,6 @@ export const PlanComparisonBoxes = ({data}) => {
                 <h3 className="font-extrabold">CARE+</h3>
               </div>
               <div className="flex flex-col justify-start w-[90%]">
-                <PlanComparisonBoxesElement />
-                <PlanComparisonBoxesElement />
-                <PlanComparisonBoxesElement />
-                <PlanComparisonBoxesElement />
                 {data?.careplus?.map((item, key) => (
                   <PlanComparisonBoxesElement key={key} data={item.label} />
                 ))}
@@ -53,10 +45,7 @@ export const PlanComparisonBoxes = ({data}) => {
               <div className="flex lg:flex-row flex-col gap-1">
                 <h3 className="font-bold">Performance</h3> <h3>Reports</h3>
               </div>
-              <div className="flex flex-col justify-start w-[90%]">
-                <PlanComparisonBoxesElement />
-                <PlanComparisonBoxesElement />
-                <PlanComparisonBoxesElement />
+              <div className="flex flex-col justify-start w-full md:w-[90%]">
                 {data?.perf?.map((item, key) => (
                   <PlanComparisonBoxesElement key={key} data={item.label} />
                 ))}
